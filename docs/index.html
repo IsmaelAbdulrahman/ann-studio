@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artificial Neural Networks — with the ANN Studio companion app</title>
+<meta name="description" content="A free, visual, hands-on course on artificial neural networks and deep learning, with a companion app that runs live Python in your browser.">
+<style>
+  :root{
+    --navy:#0e1a3a; --navy2:#1c3566; --blue:#274a86; --accent:#e6c68a;
+    --ink:#0e1530; --paper:#f5f7fc; --card:#ffffff; --muted:#5b6b8f; --line:#dfe5f2;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#22304f; background:var(--paper); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:#274a86; }
+  .wrap{ max-width:980px; margin:0 auto; padding:0 22px; }
+
+  /* ---- hero ---- */
+  header.hero{
+    background:linear-gradient(160deg,#0e1a3a,#1c3566 55%,#274a86);
+    color:#fff; padding:64px 0 56px; text-align:center;
+  }
+  .kick{ letter-spacing:.14em; text-transform:uppercase; font-size:13px; color:#c7d4ee; margin:0 0 14px; }
+  header.hero h1{ font-size:44px; line-height:1.15; margin:0 0 10px; font-weight:800; letter-spacing:-.5px; }
+  header.hero .sub{ font-size:19px; color:#e2e9f6; max-width:620px; margin:0 auto 8px; }
+  header.hero .tag{ font-size:16px; color:#aab9dd; margin:16px auto 30px; }
+  .cta{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:700; font-size:16px;
+    padding:14px 26px; border-radius:12px; transition:transform .08s ease, box-shadow .2s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn.primary{ background:var(--accent); color:#12183a; box-shadow:0 8px 24px rgba(230,198,138,.35); }
+  .btn.ghost{ background:rgba(255,255,255,.08); color:#fff; border:1.5px solid rgba(255,255,255,.35); }
+
+  /* ---- cover + intro ---- */
+  .split{ display:flex; gap:40px; align-items:center; padding:56px 0; flex-wrap:wrap; }
+  .split .cov{ flex:0 0 260px; margin:0 auto; }
+  .split .cov img{ width:260px; max-width:100%; border-radius:10px; box-shadow:0 18px 50px rgba(14,26,58,.28); display:block; }
+  .split .txt{ flex:1 1 340px; }
+  .split .txt h2{ font-size:26px; margin:0 0 12px; color:var(--ink); }
+  .split .txt p{ font-size:17px; margin:0 0 14px; }
+
+  /* ---- three steps ---- */
+  .steps{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:52px 0; }
+  .steps h2{ text-align:center; font-size:24px; margin:0 0 34px; color:var(--ink); }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .step{ text-align:center; padding:8px; }
+  .step .n{ width:46px; height:46px; line-height:46px; border-radius:50%; margin:0 auto 14px;
+    background:linear-gradient(160deg,#1c3566,#274a86); color:#fff; font-weight:800; font-size:20px; }
+  .step h3{ margin:0 0 8px; font-size:18px; color:var(--ink); }
+  .step p{ margin:0; color:#4a5878; font-size:15px; }
+
+  /* ---- cards ---- */
+  .cards{ padding:56px 0; }
+  .cards h2{ text-align:center; font-size:24px; margin:0 0 30px; color:var(--ink); }
+  .grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 24px 22px;
+    box-shadow:0 4px 18px rgba(14,26,58,.05); }
+  .card h3{ margin:0 0 8px; font-size:19px; color:var(--ink); }
+  .card p{ margin:0 0 14px; color:#4a5878; font-size:15px; }
+  .card a.more{ font-weight:700; text-decoration:none; }
+  .card a.more:hover{ text-decoration:underline; }
+
+  /* ---- support ---- */
+  .support{ background:#eef2fb; border-top:1px solid var(--line); padding:48px 0; text-align:center; }
+  .support h2{ font-size:23px; margin:0 0 10px; color:var(--ink); }
+  .support p{ max-width:640px; margin:0 auto 6px; font-size:16px; color:#3f4d6e; }
+
+  /* ---- footer ---- */
+  footer{ background:var(--navy); color:#c7d4ee; padding:36px 0; text-align:center; font-size:14px; }
+  footer strong{ color:#fff; }
+  footer a{ color:#e6c68a; }
+
+  @media (max-width:760px){
+    header.hero h1{ font-size:34px; }
+    .grid3{ grid-template-columns:1fr; }
+    .grid2{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kick">A visual, hands-on course · free companion app</p>
+    <h1>Artificial Neural Networks</h1>
+    <p class="sub">From a single neuron to transformers and diffusion — read the idea, see it drawn, then run it yourself.</p>
+    <p class="tag">Completely free · a hands-on Android app + the full PDF textbook</p>
+    <div class="cta">
+      <a class="btn primary" href="#getapp">📱 Get the Android app</a>
+      <a class="btn ghost" href="ANN-Studio-Textbook.pdf" download>⬇ Download the book</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap split">
+  <div class="cov"><img src="cover.jpg" alt="Artificial Neural Networks book cover"></div>
+  <div class="txt">
+    <h2>The book and the app, together</h2>
+    <p>The textbook explains every idea in plain English and draws it as a diagram. The <strong>ANN Studio</strong> Android app then lets you run the very same ideas as live Python — both NumPy and PyTorch — right on your phone or tablet.</p>
+    <p>The app is currently in <strong>closed testing</strong> on Google Play, and it's free to join — <a href="#getapp">here's how to get it</a>.</p>
+    <p>Written for students, researchers, and self-learners who want AI and deep learning made simple, accessible, and academically rigorous.</p>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="grid3">
+      <div class="step"><div class="n">1</div><h3>Read</h3><p>A clear, plain-English explanation of each idea — no jargon walls.</p></div>
+      <div class="step"><div class="n">2</div><h3>See</h3><p>Every concept drawn as a diagram so the math becomes a picture.</p></div>
+      <div class="step"><div class="n">3</div><h3>Run</h3><p>Execute the real code live in the app and change it to see what happens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap cards">
+  <h2>Everything in the project</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>📱 The app (Android)</h3>
+      <p>ANN Studio runs live NumPy and PyTorch on your Android device. It's in closed testing on Google Play — email the author to join.</p>
+      <a class="more" href="#getapp">How to get it →</a>
+    </div>
+    <div class="card">
+      <h3>⬇ The book</h3>
+      <p>The full textbook, free to download and share as a PDF.</p>
+      <a class="more" href="ANN-Studio-Textbook.pdf" download>Download the PDF →</a>
+    </div>
+    <div class="card">
+      <h3>🐍 The code</h3>
+      <p>Every Python example from the book — 273 files, organized by chapter, ready to run.</p>
+      <a class="more" href="https://github.com/IsmaelAbdulrahman/ann-studio/tree/main/python-code">Browse the code →</a>
+    </div>
+    <div class="card">
+      <h3>🔧 On GitHub</h3>
+      <p>The app, the textbook PDF, and all the Python code — together in one open repository.</p>
+      <a class="more" href="https://github.com/IsmaelAbdulrahman/ann-studio">View the repository →</a>
+    </div>
+  </div>
+</section>
+
+<section class="support" id="getapp" style="background:#fff; border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Get the ANN Studio app (Android)</h2>
+    <p>The companion app is an <strong>Android app</strong>, currently in <strong>closed testing</strong> on Google Play — completely free. Here's how to get on the tester list:</p>
+    <div style="max-width:660px; margin:20px auto 0; text-align:left; font-size:16px; color:#3f4d6e">
+      <p style="margin:0 0 12px"><strong>1.</strong>&nbsp; Use an <strong>Android</strong> phone or tablet.</p>
+      <p style="margin:0 0 12px"><strong>2.</strong>&nbsp; Email the author at <a href="mailto:ismael.abdulrahman@epu.edu.iq?subject=Join%20ANN%20Studio%20Android%20test">ismael.abdulrahman@epu.edu.iq</a> and ask to join the ANN Studio test. <em>Send the Google (Gmail) account you use on your Android device</em> — that address is what gets access.</p>
+      <p style="margin:0"><strong>3.</strong>&nbsp; Once you've been added, open the app on Google Play and install it.</p>
+    </div>
+    <div class="cta" style="margin-top:22px">
+      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.annstudio.neuralnetworks">Open on Google Play</a>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:#6b7794">Because it's a closed test, only approved testers can install it — that's why the email step is needed. You'll get access shortly after the author adds you.</p>
+  </div>
+</section>
+
+<section class="support">
+  <div class="wrap">
+    <h2>Free — with optional support</h2>
+    <p>The book and the app are completely free, and they will stay that way. If they have helped you and you would like to support their continued development, any voluntary contribution is deeply appreciated.</p>
+    <p><em>It is never required — everything here is fully usable without it.</em></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Dr. Ismael Khorshed Abdulrahman</strong> · PhD in Electrical and Computer Engineering, Tennessee Technological University, USA</p>
+    <p>Code under MIT · Content under CC BY 4.0 · © 2026 Ismael Khorshed Abdulrahman · <a href="https://github.com/IsmaelAbdulrahman/ann-studio">View on GitHub</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

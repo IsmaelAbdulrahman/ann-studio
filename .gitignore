@@ -1,0 +1,18 @@
+# Book formats we don't publish here
+*.epub
+*.docx
+# Keep all PDFs out of git EXCEPT the textbook we serve on the website
+*.pdf
+!docs/ANN-Studio-Textbook.pdf
+
+# Node / Python / OS cruft
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
