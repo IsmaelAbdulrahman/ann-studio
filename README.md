@@ -45,10 +45,10 @@ ANN Studio turns the book from something you read into something you *do* — it
 The app is currently in **closed testing** on Google Play (it's free). To get it:
 
 1. Use an **Android** phone or tablet.
-2. Email the author at **ismael.abdulrahman@epu.edu.iq** and ask to join the ANN Studio test — send the **Google (Gmail) account you use on your Android device**, since that's the address that gets access.
+2. **[Add your email using this short form](https://forms.gle/y9z1w7kdxS7wnJcU9)** — enter the **Google (Gmail) account you use on your Android device** (your email stays private; only the author sees it).
 3. Once you've been added to the testers, install it from Google Play: **[ANN Studio on Google Play](https://play.google.com/store/apps/details?id=com.annstudio.neuralnetworks)**.
 
-Because it's a closed test, only approved testers can install it — that's why the email step is needed.
+Because it's a closed test, only approved testers can install it — that's why the sign-up step is needed.
 
 ## License
 
