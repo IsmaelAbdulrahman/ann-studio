@@ -67,6 +67,17 @@
   .card a.more{ font-weight:700; text-decoration:none; }
   .card a.more:hover{ text-decoration:underline; }
 
+  /* ---- screenshots ---- */
+  .shots{ background:linear-gradient(160deg,#0e1a3a,#1c3566 60%,#274a86); color:#fff; padding:56px 0 60px; }
+  .shots h2{ text-align:center; font-size:24px; margin:0 0 8px; color:#fff; }
+  .shots .lede{ text-align:center; color:#c7d4ee; font-size:16px; max-width:640px; margin:0 auto 36px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .shot{ margin:0; }
+  .shot img{ width:100%; height:auto; display:block; border-radius:14px; background:#0b1020;
+    border:1px solid rgba(255,255,255,.18); box-shadow:0 14px 36px rgba(5,10,28,.45); }
+  .shot figcaption{ margin-top:13px; font-size:13.5px; line-height:1.5; color:#c1cfea; }
+  .shot figcaption b{ display:block; color:#fff; font-size:14.5px; font-weight:700; margin-bottom:3px; }
+
   /* ---- support ---- */
   .support{ background:#eef2fb; border-top:1px solid var(--line); padding:48px 0; text-align:center; }
   .support h2{ font-size:23px; margin:0 0 10px; color:var(--ink); }
@@ -77,10 +88,16 @@
   footer strong{ color:#fff; }
   footer a{ color:#e6c68a; }
 
+  @media (max-width:900px){
+    .grid4{ grid-template-columns:repeat(2,1fr); gap:28px; }
+  }
   @media (max-width:760px){
     header.hero h1{ font-size:34px; }
     .grid3{ grid-template-columns:1fr; }
     .grid2{ grid-template-columns:1fr; }
+  }
+  @media (max-width:440px){
+    .grid4{ grid-template-columns:1fr; max-width:300px; margin:0 auto; }
   }
 </style>
 </head>
@@ -116,6 +133,35 @@
       <div class="step"><div class="n">1</div><h3>Read</h3><p>A clear, plain-English explanation of each idea — no jargon walls.</p></div>
       <div class="step"><div class="n">2</div><h3>See</h3><p>Every concept drawn as a diagram so the math becomes a picture.</p></div>
       <div class="step"><div class="n">3</div><h3>Run</h3><p>Execute the real code live in the app and change it to see what happens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="shots">
+  <div class="wrap">
+    <h2>Inside the app</h2>
+    <p class="lede">Nothing here is a static picture — change a setting and the network retrains in front of you, on the device.</p>
+    <div class="grid4">
+      <figure class="shot">
+        <img src="screenshots/ANN1.jpg" width="576" height="1280" loading="lazy"
+             alt="ANN Studio training on the two-spirals dataset, showing the decision boundary and live accuracy.">
+        <figcaption><b>Train</b>Watch the decision boundary bend around two interleaved spirals as the loss falls.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/ANN2.jpg" width="576" height="1280" loading="lazy"
+             alt="The live network view in ANN Studio, with weights drawn as coloured edges between neurons.">
+        <figcaption><b>Inspect</b>Edge colour is the weight's sign, thickness its magnitude, node shade the activation.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/ANN3.jpg" width="576" height="1280" loading="lazy"
+             alt="The dataset picker in ANN Studio, showing synthetic shapes and real benchmark datasets.">
+        <figcaption><b>Choose data</b>Nine synthetic shapes plus real benchmarks — Iris, Palmer Penguins, Wheat Seeds.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/ANN4.jpg" width="576" height="1280" loading="lazy"
+             alt="The reinforcement-learning lab in ANN Studio, showing a Q-learning agent on a gridworld.">
+        <figcaption><b>Experiment</b>Labs go further — a Q-learning agent filling in a value field as it finds the goal.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
